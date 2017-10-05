@@ -2,6 +2,10 @@ zap Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the zap cookbook.
 
+v1.0.0
+### Breaking change
+- Rewritten to support custom resources
+
 v0.15.1
 ### Bugfix
 - Fix bug with filter property lamba expression
