@@ -11,7 +11,7 @@ link '/etc/conf.d/link' do
 end
 
 link '/etc/conf.d/symlink' do
-  to '/etc/skel/.bash_profile'
+  to '/etc/issue'
 end
 
 file '/etc/conf.d/file' do
