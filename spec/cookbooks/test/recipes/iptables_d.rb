@@ -1,6 +1,10 @@
 include_recipe 'iptables::default'
 
-`echo '-A FWR -p tcp -m tcp --dport 22 -j ACCEPT' >/etc/iptables.d/ssh`
+execute 'test setup' do
+  command <<EOF
+echo '-A FWR -p tcp -m tcp --dport 22 -j ACCEPT' >/etc/iptables.d/ssh
+EOF
+end
 
 iptables_rule 'http_8080' do
   action :enable

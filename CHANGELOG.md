@@ -2,6 +2,10 @@ zap Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the zap cookbook.
 
+v1.0.3
+### Enhancement
+- Test `zap::iptables_d` on centos-7
+
 v1.0.2
 ### Enhancement
 - Add `zap::iptables_d` to purge files created by the iptables cookbook.

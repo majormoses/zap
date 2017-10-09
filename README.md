@@ -169,6 +169,11 @@ zap::cron_d
 
 Remove `/etc/cron.d` entries.
 
+zap::iptables_d
+----------------
+
+Remove `/etc/iptables.d` entries created by the iptables cookbook
+
 zap::yum_repos
 --------------
 
