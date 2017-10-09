@@ -44,7 +44,7 @@ class Chef
 
       # Set default actions and allowed actions
       @action = :delete
-      @allowed_actions.push(:delete, :remove)
+      @allowed_actions.push(:delete, :remove, :disable)
     end
 
     def force(arg = nil)
@@ -121,6 +121,10 @@ class Chef
 
     def action_delete
       iterate(:delete)
+    end
+
+    def action_disable
+      iterate(:disable)
     end
 
     def action_remove
