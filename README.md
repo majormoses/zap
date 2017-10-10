@@ -43,7 +43,6 @@ Thanks
 Users and groups support was provided by Sander Botman <sbotman@schubergphilis.com>.
 Yum_repository support was provided by Sander van Harmelen <svanharmelen@schubergphilis.com>
 Apt_repository support was provided by Helgi Þormar Þorbjörnsson <helgi@php.net>
-firewall support was provided by Ronald Doorn <rdoorn@schubergphilis.com>.
 
 Resource/Provider
 =================
@@ -125,21 +124,6 @@ zap_groups '/etc/group' do
   # only zap groups whose gid is greater than 500
   filter { |g| g.gid > 500 && g.name != 'nrpe' }
 end
-```
-
-zap_firewall
-------------
-
-Delete all firewall rules that were not defined in Chef using the firewall cookbook.
-
-## Actions
-
-- **:remove**
-
-## Example
-
-```ruby
-zap_firewall 'cleaning up firewall'
 ```
 
 zap

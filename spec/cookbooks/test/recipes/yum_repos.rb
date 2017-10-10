@@ -1,5 +1,9 @@
-`mkdir /etc/yum.repos.d`
-`touch /etc/yum.repos.d/a.repo`
+execute 'test prep' do
+  command <<EOF
+mkdir -p /etc/yum.repos.d
+touch /etc/yum.repos.d/a.repo
+EOF
+end
 
 yum_repository 'chef-stable' do
   description 'Chef Software Inc stable channel'
@@ -8,4 +12,4 @@ yum_repository 'chef-stable' do
   skip_if_unavailable true
 end
 
-include_recipe 'zap::yum_repos_d'
+include_recipe 'zap::yum_repos'

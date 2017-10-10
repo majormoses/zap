@@ -24,7 +24,7 @@ zap '/etc/yum.repos.d' do
 
   collect do
     Dir
-      .glob("/etc/yum.repos.d/#{node['zap']['yum_repos_d']['pattern']}.repo")
+      .glob("/etc/yum.repos.d/#{node['zap']['yum_repos']['pattern']}.repo")
       .map { |path| File.basename(path, '.repo') }
   end
 end

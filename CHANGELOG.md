@@ -2,21 +2,10 @@ zap Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the zap cookbook.
 
-v1.0.3
-### Enhancement
-- Test `zap::iptables_d` on centos-7
-
-v1.0.2
-### Enhancement
-- Add `zap::iptables_d` to purge files created by the iptables cookbook.
-
-v1.0.1
-### Bugfix
-- Fix `zap_directory` tests
-
 v1.0.0
 ### Breaking change
 - Rewritten to support custom resources
+- Remove `zap_firewall` as v2.6.2 of the firewall cookbook manages the ruleset as a whole.
 
 v0.15.1
 ### Bugfix
