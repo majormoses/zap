@@ -1,9 +1,12 @@
-`groupadd input -g 999 &>/dev/null`
-`groupadd larry &> /dev/null`
+execute 'test prep' do
+  command <<COMMAND
+groupadd input -g 999 &>/dev/null
+groupadd larry &> /dev/null
+groupadd curly &> /dev/null
+COMMAND
+end
 
 group 'moe'
-
-`groupadd curly &> /dev/null`
 
 group 'input' do
   action :nothing

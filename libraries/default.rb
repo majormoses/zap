@@ -19,6 +19,16 @@
 # limitations under the License.
 #
 
+if defined?(ChefSpec)
+  def call_zap_delete(resource_name)
+    ChefSpec::Matchers::ResourceMatcher.new(:zap, :delete, resource_name)
+  end
+
+  def call_zap_remove(resource_name)
+    ChefSpec::Matchers::ResourceMatcher.new(:zap, :remove, resource_name)
+  end
+end
+
 class Chef
   # rubocop:disable Style/Lambda
   class Resource::Zap < Resource
@@ -165,7 +175,6 @@ class Chef
       return unless @new_resource.delayed || @new_resource.immediately
 
       extraneous = existing - desired
-
       extraneous.each do |name|
         r = @purge.call(name, @new_resource)
         r.cookbook_name = @new_resource.cookbook_name

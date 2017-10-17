@@ -1,8 +1,12 @@
-`useradd larry &>/dev/null`
+execute 'test prep' do
+  command <<COMMAND
+useradd -s larry &>/dev/null
+useradd curly &>/dev/null
+useradd waldo &>/dev/null
+COMMAND
+end
 
 user 'moe'
-
-`useradd curly &>/dev/null`
 
 zap_users '/etc/passwd' do
   pattern	node['users']['pattern']

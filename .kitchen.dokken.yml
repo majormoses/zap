@@ -67,9 +67,9 @@ suites:
   - name: cron_d
     run_list:
     - recipe[test::cron_d]
-  - name: symlink
+  - name: directory
     run_list:
-    - recipe[test::symlink]
+    - recipe[test::directory]
   - name: groups
     run_list:
     - recipe[test::groups]

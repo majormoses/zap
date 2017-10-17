@@ -1,8 +1,8 @@
 execute 'test prep' do
-  command <<EOF
+  command <<COMMAND
 mkdir -p /etc/yum.repos.d
 touch /etc/yum.repos.d/a.repo
-EOF
+COMMAND
 end
 
 yum_repository 'chef-stable' do

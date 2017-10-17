@@ -22,6 +22,13 @@
 require 'etc'
 require_relative 'default.rb'
 
+if defined?(ChefSpec)
+  def delete_user(resource_name)
+    ChefSpec::Matchers::ResourceMatcher.new(:linux_user, :remove, resource_name) ||
+      ChefSpec::Matchers::ResourceMatcher.new(:user, :remove, resource_name)
+  end
+end
+
 # zap_users '/etc/passwd'
 class Chef
   # resource

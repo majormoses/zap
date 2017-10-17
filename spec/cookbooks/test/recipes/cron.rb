@@ -1,5 +1,6 @@
-file '/tmp/cron' do
-  content <<EOF
+execute 'test prep' do
+  command <<COMMAND
+cat >/tmp/cron <<EOF
 # Chef Name: a
 * * * * * echo a
 
@@ -9,15 +10,14 @@ file '/tmp/cron' do
 # Chef Name: c
 * * * * * echo c
 EOF
-end
 
-file '/tmp/empty' do
-  content ''
-end
+cat >/tmp/empty </dev/null
 
-execute 'crontab -u root /tmp/cron'
-execute 'crontab -u nobody /tmp/cron'
-execute 'crontab -u daemon /tmp/empty'
+crontab -u root /tmp/cron
+crontab -u nobody /tmp/cron
+crontab -u daemon /tmp/empty
+COMMAND
+end
 
 cron 'a' do
   action :nothing
